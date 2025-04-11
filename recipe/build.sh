@@ -9,6 +9,8 @@ ln -sf ${DOTNET_ROOT}/dotnet ${PREFIX}/bin
 # Build package with dotnet publish
 rm -rf global.json
 framework_version="$(dotnet --version | sed -e 's/\..*//g').0"
+sed -i "s?<TargetFramework>.*</TargetFramework>?<TargetFramework>net${framework_version}</TargetFramework>?" \
+    src/fsdgenfsd/fsdgenfsd.csproj
 dotnet publish --no-self-contained src/fsdgenfsd/fsdgenfsd.csproj --output ${PREFIX}/libexec/${PKG_NAME} --framework "net${framework_version}"
 rm ${PREFIX}/libexec/${PKG_NAME}/fsdgenfsd
 
