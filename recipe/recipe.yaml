@@ -1,5 +1,5 @@
 context:
-  version: "2.18.0"
+  version: "2.18.1"
 
 package:
   name: fsdgenfsd
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/FacilityApi/Facility/archive/nuget.${{ version }}.tar.gz
-  sha256: 59194c747c6f7f2aaaac02e6933266c8fbab7b549a063701e501d489d7883593
+  sha256: 500e491317c1e16136a264f08d2520fa81c651dc1ef845303790e7d2ec2b397e
 
 build:
   number: 0
